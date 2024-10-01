@@ -1,0 +1,82 @@
+.profile {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  color: #212529;
+}
+
+.profile h1 {
+  font-size: 36px;
+  color: #00A0FF;
+  margin-bottom: 20px;
+}
+
+.profile form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile form div {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.profile label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.profile input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.date-inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-inputs input {
+  width: 30%;
+}
+
+.profile button {
+  padding: 10px 20px;
+  background-color: #00A0FF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.profile button:hover {
+  background-color: #0056b3;
+}
+
+.profile .error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.profile .message {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}

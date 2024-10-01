@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+
+.game {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url('/public/assets/gamebg4.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+
+.logo-text {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #00A0FF;
+  font-family: 'Cinzel Decorative', serif;
+  z-index: 2;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logo-text:hover {
+  text-decoration: underline;
+}
+
+.user-info {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background-color: #2d536b;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 30px 0 30px 0;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color .3s ease;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.user-info:hover {
+  background-color: #6C757D;
+}
+
+.dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.dropdown-button {
+  background-color: #F8F9FA;
+  color: #212529;
+  padding: 8px 16px;
+  border: none;
+}
+
+.dropdown-button:hover {
+background-color:#343A40;}
+
+.game-container {
+ display:flex;flex-direction:
+column;align-items:center;justify-content:center;height:
+100vh;padding-top:
+60px;}
+
+.color-options {
+ margin-bottom:
+20px;}
+
+.chessboard-container {
+ display: flex;
+ justify-content: center;
+ align-items: flex-start;
+ width: 100%;
+ height: auto;
+ margin-top: -100px;
+ position: relative;
+}
+
+.game-controls {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 300px;
+  top: 0;
+}
+
+.game-controls button {
+  margin: 5px 0;
+  padding: 10px 20px;
+  background-color: #00A0FF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 120px;
+}
+
+.game-controls button:hover {
+  background-color: #0056b3;
+}
+
+.chessboard {
+ display:inline-grid;grid-template-columns:
+repeat(8,50px);grid-template-rows:
+repeat(8,50px);border:
+2px solid #333;}
+
+.board-row {
+ display:flex;}
+
+.file-labels {
+ display:flex;justify-content:center;margin-bottom:
+5px;}
+
+.rank-label {
+ display:flex;align-items:center;justify-content:center;width:
+20px;}
+
+.square {
+ width:
+50px;height:
+50px;display:flex;justify-content:center;align-items:center;cursor:pointer;}
+
+.chess-piece {
+ width:
+80%;height:auto;object-fit:
+contain;}
+
+.selected {
+ box-shadow:
+inset0
+0
+0
+3px
+yellow;}
+
+.possible-move::after{
+ content:'';position:absolute;top:
+50%;left:
+50%;transform:
+translate(-50%,-50%);width:
+20px;height:
+20px;background-color:
+rgba(255,0,0,.5);border-radius:
+50%;}
+
+.message{
+ margin-top:
+10px;font-size:
+18px;color:red;}
+
+button{
+ margin:px;padding:px;background-color:#FF00FF;color:white;border:none;border-radius:px030px0;cursor:pointer;}
+
+button:hover{
+ background-color:#0056b3;}
+
+ .turn-indicator {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #00A0FF;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.king-in-check {
+  background-color: red !important;
+}
