@@ -1,3 +1,4 @@
+/* Profile container styling */
 .profile {
   max-width: 400px;
   margin: 0 auto;
@@ -6,29 +7,34 @@
   color: #212529;
 }
 
+/* Header styling within the profile */
 .profile h1 {
   font-size: 36px;
   color: #00A0FF;
   margin-bottom: 20px;
 }
 
+/* Form layout styling */
 .profile form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Styling for each form input container */
 .profile form div {
   margin-bottom: 15px;
   width: 100%;
 }
 
+/* Label styling for form inputs */
 .profile label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
+/* Input field styling */
 .profile input {
   width: 100%;
   padding: 8px;
@@ -36,15 +42,18 @@
   border-radius: 4px;
 }
 
+/* Date input fields layout */
 .date-inputs {
   display: flex;
   justify-content: space-between;
 }
 
+/* Individual date input field styling */
 .date-inputs input {
   width: 30%;
 }
 
+/* Button styling */
 .profile button {
   padding: 10px 20px;
   background-color: #00A0FF;
@@ -56,24 +65,29 @@
   margin-top: 10px;
 }
 
+/* Button hover effect */
 .profile button:hover {
   background-color: #0056b3;
 }
 
+/* Error message styling */
 .profile .error {
   color: red;
   margin-bottom: 10px;
 }
 
+/* Success message styling */
 .profile .message {
   color: green;
   margin-bottom: 10px;
 }
 
+/* Datepicker wrapper styling */
 .react-datepicker-wrapper {
   width: 100%;
 }
 
+/* Datepicker input styling */
 .react-datepicker__input-container input {
   width: 100%;
   padding: 8px;

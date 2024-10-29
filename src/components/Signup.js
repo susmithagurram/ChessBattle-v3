@@ -4,22 +4,26 @@ import { auth } from '../firebase/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import '../styles/Signup.css';
 
+
+// Main component for the Signup page
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+  // Function to handle user signup
   const handleSignup = async (e) => {
-    e.preventDefault();
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      navigate('/');
+  e.preventDefault();
+  try {
+    await createUserWithEmailAndPassword(auth, email, password);
+    navigate('/');
     } catch (error) {
-      setError('Failed to create an account. Please try again.');
+    setError('Failed to create an account. Please try again.');
       console.error('Error signing up:', error);
     }
   };
+
 
   return (
     <div className="signup">

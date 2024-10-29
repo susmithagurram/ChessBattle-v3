@@ -14,6 +14,7 @@ const Profile = () => {
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
 
+  // This effect runs on component mount to check authentication state and fetch user data.
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
@@ -32,6 +33,7 @@ const Profile = () => {
     return () => unsubscribe();
   }, []);
 
+  // This function handles the form submission for updating the user's profile.
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');

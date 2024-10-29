@@ -23,6 +23,7 @@ const Game = () => {
   const [dob, setDob] = useState('');
   const [activeTheme, setActiveTheme] = useState('default');
   const navigate = useNavigate();
+  const [moveHistory, setMoveHistory] = useState([]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -37,6 +38,7 @@ const Game = () => {
     return () => unsubscribe();
   }, [navigate]);
 
+  // Handles the click on a square, managing piece selection and movement
   const handleSquareClick = (square) => {
     const piece = game.get(square);
     
@@ -56,14 +58,17 @@ const Game = () => {
         });
         
         if (move) {
-          const newGame = new Chess(game.fen());
-          setGame(newGame);
-          setSelectedPiece(null);
-          setPossibleMoves([]);
-          saveGameState();
-          
-          // Check if the king is in check after the move
-          setIsCheck(newGame.inCheck());
+          if (move) {
+            const newGame = new Chess(game.fen());
+            setGame(newGame);
+            setSelectedPiece(null);
+            setPossibleMoves([]);
+            saveGameState();
+            setIsCheck(newGame.inCheck());
+            
+            // Save the current game state to the move history
+            setMoveHistory(prevHistory => [...prevHistory, game.fen()]);
+          }
         }
       } catch (error) {
         setMessage("Invalid move");
@@ -72,6 +77,21 @@ const Game = () => {
     }
   };
 
+  const handleUndo = () => {
+    if (moveHistory.length > 0) {
+      const previousState = moveHistory[moveHistory.length - 1];
+      const newGame = new Chess(previousState);
+      setGame(newGame);
+      setMoveHistory(prevHistory => prevHistory.slice(0, -1));
+      setIsCheck(newGame.inCheck());
+      saveGameState();
+    } else {
+      setMessage("No more moves to undo");
+      setTimeout(() => setMessage(''), 2000);
+    }
+  };
+
+  // Saves the current game state to Firestore
   const saveGameState = async () => {
     if (user) {
       try {
@@ -85,6 +105,7 @@ const Game = () => {
     }
   };
 
+  // Returns the image source for a given chess piece
   const getPieceImage = (piece) => {
     if (!piece) return null;
     const color = piece.color === 'w' ? 'white' : 'black';
@@ -99,6 +120,7 @@ const Game = () => {
     return `/assets/${color}_${pieceType}.svg`;
   };
 
+  // Finds the position of the king for a given color
   const getKingPosition = (color) => {
     const squares = game.board();
     for (let i = 0; i < 8; i++) {
@@ -112,6 +134,7 @@ const Game = () => {
     return null;
   };
 
+  // Renders the chessboard and its squares
   const renderBoard = () => {
     const board = [];
     const files = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
@@ -152,15 +175,18 @@ const Game = () => {
     return board;
   };
 
+  // Changes the colors of the chessboard based on the selected theme
   const changeColors = (lightColor, darkColor, themeName) => {
     setBoardColors({ light: lightColor, dark: darkColor });
     setActiveTheme(themeName);
   };
 
+  // Toggles the visibility of the dropdown menu
   const toggleDropdown = () => {
     setDropdownVisible(!dropdownVisible);
   };
 
+  // Logs out the user and navigates to the home page
   const handleLogout = async () => {
     try {
       await signOut(auth);
@@ -170,23 +196,28 @@ const Game = () => {
     }
   };
 
+  // Navigates to the home page when the logo is clicked
   const handleLogoClick = () => {
     navigate('/');
   };
 
+  // Opens the profile editing modal
   const handleProfileClick = () => {
     setProfileVisible(true);
     setDropdownVisible(false);
   };
 
+  // Saves the profile changes and closes the modal
   const handleSaveProfile = () => {
     setProfileVisible(false);
   };
 
+  // Exits the game and navigates to the home page
   const handleExit = () => {
     navigate('/');
   };
 
+  // Starts a new game by resetting the game state
   const handleNewGame = () => {
     const newGame = new Chess();
     setGame(newGame);
@@ -218,6 +249,7 @@ const Game = () => {
           <div className="game-controls">
             <button onClick={handleExit}>Exit</button>
             <button onClick={handleNewGame}>New Game</button>
+            <button onClick={handleUndo}>Undo</button>
           </div>
         </div>
         {message && <div className="message">{message}</div>}

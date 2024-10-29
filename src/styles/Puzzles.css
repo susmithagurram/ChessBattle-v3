@@ -1,5 +1,7 @@
+/* importing cinzel decorative font */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
 
+/* General Styles for the puzzles container */
 .puzzles {
   position: relative;
   height: 100vh;
@@ -11,6 +13,7 @@
   text-align: center;
 }
 
+/* Logo Styles for the logo text */
 .logo-text {
   position: absolute;
   top: 10px;
@@ -24,10 +27,12 @@
   text-decoration: none;
 }
 
+/* Hover effect for logo text */
 .logo-text:hover {
   text-decoration: underline;
 }
 
+/* User Info Styles for displaying user information */
 .user-info {
   position: absolute;
   top: 10px;
@@ -43,19 +48,22 @@
   cursor: pointer;
 }
 
+/* Hover effect for user info */
 .user-info:hover {
   background-color: #6C757D;
 }
 
+/* Dropdown Styles for the dropdown menu */
 .dropdown {
   position: absolute;
-  top: 40px;
+  top: 30px;
   right: 0;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
+/* Styles for the dropdown button */
 .dropdown-button {
   background-color: #F8F9FA;
   color: #212529;
@@ -64,44 +72,53 @@
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
+  padding-top: 50px
 }
 
+/* Hover effect for dropdown button */
 .dropdown-button:hover {
   background-color: #343A40;
 }
 
+/* Main Content Styles for the main section */
 main {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
+/* Styles for h2 headings */
 h2 {
   font-size: 24px;
   margin-bottom: 10px;
 }
 
+/* Styles for message text */
 .message {
   font-size: 18px;
   margin-bottom: 20px;
-  color: #333;
+  color: #c0e820;
 }
 
+/* Chessboard Styles for the chessboard layout */
 .chessboard {
   display: inline-flex;
   flex-direction: column;
   border: 2px solid #333;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
+/* Styles for each row of the chessboard */
 .board-row {
   display: flex;
 }
 
+/* File labels for the chessboard */
 .file-labels {
   display: flex;
   justify-content: space-around;
   padding-left: 20px;
 }
 
+/* Rank labels for the chessboard */
 .rank-label {
   display: flex;
   align-items: center;
@@ -109,6 +126,7 @@ h2 {
   width: 20px;
 }
 
+/* Styles for each square on the chessboard */
 .square {
   width: 50px;
   height: 50px;
@@ -119,16 +137,19 @@ h2 {
   position: relative;
 }
 
+/* Styles for chess pieces */
 .chess-piece {
   width: 80%;
   height: 80%;
   object-fit: contain;
 }
 
+/* Styles for selected squares */
 .selected {
   box-shadow: inset 0 0 0 3px yellow;
 }
 
+/* Styles for possible moves indication */
 .possible-move::after {
   content: '';
   position: absolute;
@@ -141,20 +162,19 @@ h2 {
   border-radius: 50%;
 }
 
+/* Hint Styles for hinting moves */
 .hint {
   box-shadow: inset 0 0 0 3px green;
 }
 
-.color-options {
-  margin-top: 20px;
-}
-
+/* Button container styles */
 .button-container {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
+/* Styles for buttons */
 button {
   margin: 5px;
   padding: 10px;
@@ -165,18 +185,16 @@ button {
   cursor: pointer;
 }
 
+/* Hover effect for buttons */
 button:hover {
   background-color: #0056b3;
 }
 
-.hint-button, .next-puzzle {
-  font-size: 18px;
-}
-
+/* Level Selection Styles for selecting game levels */
 .level-selection {
-  position: absolute; /* Position it absolutely */
-  top: 130px; /* Adjust top position */
-  right: 650px; /* Adjust right position */
+  position: absolute;
+  top: 140px;
+  right: 250px;
   color: white;
-  z-index: 3; /* Ensure it appears above other elements */
+  z-index: 3;
 }

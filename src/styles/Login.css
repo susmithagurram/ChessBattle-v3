@@ -1,11 +1,14 @@
+/* importing cinzel decorative font */     
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
 
+/* Styles for login and signup containers */
 .login, .signup {
   max-width: 300px;
   margin: 0 auto;
   padding: 20px;
 }
 
+/* Styles for the login title */
 .login-title {
   font-family: 'Cinzel Decorative', serif;
   font-size: 36px;
@@ -16,82 +19,88 @@
   cursor: pointer;
 }
 
+/* Hover effect for the login title */
 .login-title:hover {
   text-decoration: underline;
 }
 
-.login, .signup {
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  input {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  .error {
-    color: red;
-    margin-bottom: 10px;
-  }
-  
-  .google-button {
-    background-color: #4285F4;
-    margin-top: 10px;
-  }
-  
-  .google-button:hover {
-    background-color: #357ae8;
-  }
-  
-  .logo-text {
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    font-size: 36px;
-    font-weight: bold;
-    color: #00A0FF;
-    font-family: 'Cinzel Decorative', serif;
-    z-index: 2;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  
-  .logo-text:hover {
-    text-decoration: underline;
-  }
-  
-  .back-arrow {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    color: #007bff;
-    cursor: pointer;
-    z-index: 2;
-  }
-  
-  .back-arrow:hover {
-    color: #0056b3;
-  }
+/* Form layout styles */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input field styles */
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Button styles */
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Hover effect for buttons */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Error message styles */
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+/* Google button styles */
+.google-button {
+  background-color: #4285F4;
+  margin-top: 10px;
+}
+
+/* Hover effect for Google button */
+.google-button:hover {
+  background-color: #357ae8;
+}
+
+/* Logo text styles */
+.logo-text {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #00A0FF;
+  font-family: 'Cinzel Decorative', serif;
+  z-index: 2;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Hover effect for logo text */
+.logo-text:hover {
+  text-decoration: underline;
+}
+
+/* Back arrow styles */
+.back-arrow {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  color: #007bff;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Hover effect for back arrow */
+.back-arrow:hover {
+  color: #0056b3;
+}

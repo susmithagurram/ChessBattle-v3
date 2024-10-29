@@ -1,11 +1,14 @@
+/* Importing Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
 
+/* Styles for the main signup container */
 .signup {
   max-width: 300px;
   margin: 0 auto;
   padding: 20px;
 }
 
+/* Styles for the signup title */
 .signup-title {
   font-family: 'Cinzel Decorative', serif;
   font-size: 36px;
@@ -16,15 +19,18 @@
   cursor: pointer;
 }
 
+/* Hover effect for the signup title */
 .signup-title:hover {
   text-decoration: underline;
 }
 
+/* Styles for the signup form layout */
 .signup form {
   display: flex;
   flex-direction: column;
 }
 
+/* Styles for input fields in the signup form */
 .signup input {
   margin-bottom: 10px;
   padding: 10px;
@@ -32,6 +38,7 @@
   border-radius: 4px;
 }
 
+/* Styles for the signup button */
 .signup button {
   padding: 10px;
   background-color: #007bff;
@@ -41,24 +48,29 @@
   cursor: pointer;
 }
 
+/* Hover effect for the signup button */
 .signup button:hover {
   background-color: #0056b3;
 }
 
+/* Styles for error messages */
 .signup .error {
   color: red;
   margin-bottom: 10px;
 }
 
+/* Styles for the Google sign-in button */
 .signup .google-button {
   background-color: #4285F4;
   margin-top: 10px;
 }
 
+/* Hover effect for the Google button */
 .signup .google-button:hover {
   background-color: #357ae8;
 }
 
+/* Styles for the logo text */
 .logo-text {
   position: absolute;
   top: 10px;
@@ -72,6 +84,7 @@
   text-decoration: none;
 }
 
+/* Hover effect for the logo text */
 .logo-text:hover {
   text-decoration: underline;
 }

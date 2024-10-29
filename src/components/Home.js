@@ -9,7 +9,7 @@ const Home = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [profileVisible, setProfileVisible] = useState(false);
   const [name, setName] = useState('');
-  const [dob, setDob] = useState('');
+  const [dob, setDob] = useState(''); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -80,7 +80,7 @@ const Home = () => {
           )}
         </div>
       ) : (
-        <Link to="/login" className="login-button">Login</Link>
+        <Link to="/login" className="login-button">Login / Register</Link>
       )}
       <div className="content">
         <h2>SEASON 1:</h2>

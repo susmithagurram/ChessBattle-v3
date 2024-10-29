@@ -10,6 +10,7 @@ const Login = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+  // Handles user login with email and password
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -21,6 +22,7 @@ const Login = () => {
     }
   };
 
+  // Handles user login with Google
   const handleGoogleLogin = async () => {
     try {
       await signInWithPopup(auth, googleProvider);

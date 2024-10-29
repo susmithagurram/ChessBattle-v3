@@ -1,5 +1,7 @@
+/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
 
+/* Main home container styling */
 .home {
   position: relative;
   height: 100vh;
@@ -9,6 +11,7 @@
   background-position: center;
 }
 
+/* Overlay for background dimming */
 .overlay {
   position: absolute;
   top: 0;
@@ -19,6 +22,7 @@
   z-index: 1;
 }
 
+/* Logo text styling */
 .logo-text {
   position: absolute;
   top: 10px;
@@ -30,6 +34,7 @@
   z-index: 2;
 }
 
+/* Login button and user info styling */
 .login-button, .user-info {
   position: absolute;
   top: 10px;
@@ -45,14 +50,17 @@
   cursor: pointer;
 }
 
+/* Hover effect for login button */
 .login-button:hover {
   background-color: #688198;
 }
 
+/* Hover effect for user info */
 .user-info:hover {
   background-color: #6C757D;
 }
 
+/* Dropdown menu styling */
 .dropdown {
   position: absolute;
   top: 40px;
@@ -63,6 +71,7 @@
   z-index: 3;
 }
 
+/* Dropdown button styling */
 .dropdown-button {
   background-color: #F8F9FA;
   color: #212529;
@@ -74,10 +83,12 @@
   width: 100%;
 }
 
+/* Hover effect for dropdown button */
 .dropdown-button:hover {
   background-color: #343A40;
 }
 
+/* Content area styling */
 .content {
   position: relative;
   max-width: 800px;
@@ -87,34 +98,39 @@
   text-align: center;
   z-index: 2;
   font-family: 'Cinzel Decorative', serif;
-
 }
 
+/* Main heading styling */
 h1 {
   font-size: 48px;
   margin: 5px 0;
   color: #00A0FF;
 }
 
+/* Subheading styling */
 h2 {
   font-size: 24px;
   margin: 0px 0;
 }
 
+/* Partner text styling */
 .partner {
   font-weight: bold;
 }
 
+/* Unordered list styling */
 ul {
   list-style-type: none;
   padding: 0;
 }
 
+/* List item styling */
 li {
   margin: 10px 0;
   font-size: 16px;
 }
 
+/* Button container styling */
 .button-container {
   display: flex;
   justify-content: center;
@@ -122,6 +138,7 @@ li {
   margin-top: 20px;
 }
 
+/* Styled button with gradient */
 .styled-button {
   background: linear-gradient(90deg, #FF00FF, #FF77FF);
   color: white;
@@ -134,10 +151,12 @@ li {
   text-align: center;
 }
 
+/* Hover effect for styled button */
 .styled-button:hover {
   background: linear-gradient(90deg, #CC00CC, #CC66CC);
 }
 
+/* Profile modal styling */
 .profile-modal {
   position: fixed;
   top: 0;
@@ -151,6 +170,7 @@ li {
   z-index: 4;
 }
 
+/* Profile content styling */
 .profile-content {
   background: white;
   padding: 20px;
@@ -158,15 +178,18 @@ li {
   text-align: center;
 }
 
+/* Profile content heading styling */
 .profile-content h2 {
   margin-bottom: 20px;
 }
 
+/* Label styling in profile content */
 .profile-content label {
   display: block;
   margin-bottom: 10px;
 }
 
+/* Input field styling in profile content */
 .profile-content input {
   margin-top: 5px;
   padding: 8px;
@@ -174,6 +197,7 @@ li {
   box-sizing: border-box;
 }
 
+/* Button styling in profile content */
 .profile-content button {
   margin-top: 10px;
   padding: 10px 20px;
@@ -185,6 +209,7 @@ li {
   font-weight: bold;
 }
 
+/* Hover effect for profile content button */
 .profile-content button:hover {
   background-color: #0066cc;
 }

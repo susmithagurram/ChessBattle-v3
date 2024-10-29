@@ -10,34 +10,40 @@ const puzzles = {
     {
       fen: 'r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 0 1',
       solution: ['Qxf7#'],
-      description: 'Mate in 1: White to move'
+      description: 'Mate in 1: White to move',
+      hintComment: "Move Queen to f7"
     },
     {
-      fen: '3qk3/R7/3Q4/8/8/8/8/4K3 w - - 0 1',
+      fen: "5rk1/5ppp/5PQ1/8/8/8/8/6BK w - - 0 1",
+      solution: ['Qxg7#'],
+      description: 'Mate in 1: White to move',
+      hintComment: "Move Queen to g7"
+    },
+    {
+      fen: '6k1/5ppp/8/8/8/8/5PPP/3Q2K1 w - - 0 1',
       solution: ['Qd8#'],
-      description: 'Mate in 1: White to move'
-    },
-    {
-      fen: '4k3/4P3/4K3/8/8/8/8/8 w - - 0 1',
-      solution: ['e8=Q#', 'e8=R#'],
-      description: 'Mate in 1: White to move'
+      description: 'Mate in 1: White to move',
+      hintComment: "Move Queen to d8"
     }
   ],
   level2: [
     {
       fen: '1k6/ppp5/8/8/8/8/5Q2/4K3 w - - 0 1',
       solution: ['Qf7', 'Qb7#'],
-      description: 'Mate in 2: White to move'
+      description: 'Mate in 2: White to move',
+      hintComment: "Use the queen to restrict the king's movement before delivering checkmate."
     },
     {
       fen: '3r2k1/p4ppp/8/8/8/1B6/P4PPP/6K1 w - - 0 1',
       solution: ['Bh7+', 'Bf5#'],
-      description: 'Mate in 2: White to move'
+      description: 'Mate in 2: White to move',
+      hintComment: "The bishop can force the king into a mating net with a check."
     },
     {
       fen: '4k3/8/8/8/8/5Q2/5P2/4K3 w - - 0 1',
       solution: ['Qe4+', 'Qe7#'],
-      description: 'Mate in 2: White to move'
+      description: 'Mate in 2: White to move',
+      hintComment: "Use the queen to give a check that limits the king's escape squares."
     }
   ]
 };
@@ -80,7 +86,9 @@ const Puzzles = () => {
     setPossibleMoves([]);
     setShowHint(false);
   }, [currentLevel, currentPuzzle]);
+  
 
+  // Handles the click event on a square, managing piece selection and movement
   const handleSquareClick = (square) => {
     const piece = game.get(square);
 
@@ -134,10 +142,12 @@ const Puzzles = () => {
     setShowHint(false);
   };
 
+  // Toggles the visibility of the dropdown menu
   const toggleDropdown = () => {
     setDropdownVisible(!dropdownVisible);
   };
 
+  // Logs out the user and navigates to the home page
   const handleLogout = async () => {
     try {
       await signOut(auth);
@@ -147,6 +157,7 @@ const Puzzles = () => {
     }
   };
 
+  // Returns the image source for a given chess piece
   const getPieceImage = (piece) => {
     if (!piece) return null;
     const color = piece.color === 'w' ? 'white' : 'black';
@@ -161,6 +172,7 @@ const Puzzles = () => {
     return `/assets/${color}_${pieceType}.svg`;
   };
 
+  // Renders the chessboard with pieces and squares
   const renderBoard = () => {
     const board = [];
     const files = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
@@ -199,10 +211,12 @@ const Puzzles = () => {
     return board;
   };
 
+  // Changes the colors of the chessboard squares
   const changeColors = (lightColor, darkColor) => {
     setBoardColors({ light: lightColor, dark: darkColor });
   };
 
+  // Advances to the next puzzle or level
   const nextPuzzle = () => {
     if (currentPuzzle < puzzles[currentLevel].length - 1) {
       setCurrentPuzzle(currentPuzzle + 1);
@@ -214,15 +228,22 @@ const Puzzles = () => {
     }
   };
 
+  // Shows a hint for the current puzzle
   const showHintMove = () => {
     setShowHint(true);
-    const hintMove = puzzles[currentLevel][currentPuzzle].solution[moveIndex];
-    setMessage(`Hint: Move ${hintMove}`);
+    const hintComment = puzzles[currentLevel][currentPuzzle].hintComment;
+    setMessage(`Hint: ${hintComment}`);
   };
 
+  // Handles level change and resets the current puzzle
   const handleLevelChange = (level) => {
     setCurrentLevel(level);
     setCurrentPuzzle(0); // Reset to the first puzzle of the selected level
+  };
+
+  // Exits the game and navigates to the home page
+  const handleExit = () => {
+    navigate('/');
   };
 
   return (
@@ -254,11 +275,15 @@ const Puzzles = () => {
         <p className="message">{message}</p>
         <div className="chessboard">
           {renderBoard()}
+          <div className="game-controls">
+            <button onClick={handleExit}>Exit</button>
+          </div>
         </div>
         <div className="button-container">
           <button onClick={showHintMove} className="hint-button">Hint</button>
           <button onClick={nextPuzzle} className="next-puzzle">Next Puzzle</button>
         </div>
+
         <div className="color-options">
           <button onClick={() => changeColors('#ffffff', '#000000')}>Default (Black & White)</button>
           <button onClick={() => changeColors('#f0d9b5', '#b58863')}>Wooden Theme</button>
